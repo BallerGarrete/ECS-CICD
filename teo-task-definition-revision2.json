@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-1:188527884040:task-definition/teo-task-definition:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-west-1:188527884040:task-definition/teo-task-definition:2",
     "containerDefinitions": [
         {
             "name": "theo-container",
-            "image": "188527884040.dkr.ecr.us-west-1.amazonaws.com/theo-image",
+            "image": "188527884040.dkr.ecr.us-west-1.amazonaws.com/theo-image:d3b9307b854d019b9c992f99a88681234b989947",
             "cpu": 0,
             "portMappings": [
                 {
@@ -16,13 +16,12 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-create-group": "false",
+                    "awslogs-create-group": "true",
                     "awslogs-group": "/ecs/teo-task-definition",
                     "awslogs-region": "us-west-1",
                     "awslogs-stream-prefix": "ecs"
@@ -33,7 +32,7 @@
     "family": "teo-task-definition",
     "executionRoleArn": "arn:aws:iam::188527884040:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 2,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -76,7 +75,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-02-27T22:28:09.973Z",
-    "registeredBy": "arn:aws:iam::188527884040:user/BallerAdmin",
+    "registeredAt": "2023-02-28T20:15:48.069Z",
+    "registeredBy": "arn:aws:iam::188527884040:user/Terraform_User",
     "tags": []
 }
