@@ -9,7 +9,7 @@ env:
   ECR_REPOSITORY: theo-image                   # set this to your Amazon ECR repository name
   ECS_SERVICE: theo-service                    # set this to your Amazon ECS service name
   ECS_CLUSTER: theo-cluster                 # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: teo-task-definition-revision2.json # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION: arn:aws:ecs:us-west-1:188527884040:task-definition/teo-task-definition:2 # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: theo-container           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
