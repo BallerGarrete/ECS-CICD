@@ -22,7 +22,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-create-group": "true",
+                    "awslogs-create-group": "false",
                     "awslogs-group": "/ecs/teo-task-definition",
                     "awslogs-region": "us-west-1",
                     "awslogs-stream-prefix": "ecs"
