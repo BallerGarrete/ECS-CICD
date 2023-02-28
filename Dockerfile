@@ -1,5 +1,5 @@
 # Use the official NGINX image as the base image
-FROM nginx
+FROM nginx:latest
 
 # Remove the default NGINX configuration file
 RUN rm /etc/nginx/conf.d/default.conf
@@ -8,7 +8,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY src /usr/share/nginx/html/
 
 # Copy the NGINX configuration file to the container
-COPY nginx.conf /etc/nginx/conf.d/
+#COPY nginx.conf /etc/nginx/conf.d/
 
 # Expose port 80 for HTTP traffic
 EXPOSE 80
