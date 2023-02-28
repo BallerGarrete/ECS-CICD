@@ -37,11 +37,6 @@ jobs:
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
-      
-    - name: Generate version tag
-      run: |
-          VERSION=$(date + $GITHUB_OUTPUT)
-          echo ::set-env name=VERSION::$VERSION
 
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
