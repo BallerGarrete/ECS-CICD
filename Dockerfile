@@ -12,7 +12,7 @@ ARG BUILD_DATE
 LABEL org.label-schema.build-date=$BUILD_DATE
 
 # Copy the NGINX configuration file to the container
-#COPY nginx.conf /etc/nginx/conf.d/
+COPY nginx.conf /etc/nginx/conf.d
 
 # Expose port 80 for HTTP traffic
 EXPOSE 80
