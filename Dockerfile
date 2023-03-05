@@ -1,21 +1,18 @@
 # Use the official NGINX image as the base image
-FROM nginx:alpine
-
-#Specify working directory
-WORKDIR /usr/share/nginx/html
+FROM nginx:alpline
 
 # Remove the default NGINX configuration file
-RUN rm /etc/nginx/conf.d/default.conf
+#RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy the website files to the container
-COPY . .
+COPY src/ /usr/share/nginx/html
 
 #Tag Image
 ARG BUILD_DATE
 LABEL org.label-schema.build-date=$BUILD_DATE
 
 # Copy the NGINX configuration file to the container
-COPY nginx.conf /etc/nginx/conf.d
+#COPY nginx.conf /etc/nginx/conf.d
 
 # Expose port 80 for HTTP traffic
 EXPOSE 80
