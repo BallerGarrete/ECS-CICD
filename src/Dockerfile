@@ -8,7 +8,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy the website files to the container
-COPY src/. .
+COPY . .
 
 #Tag Image
 ARG BUILD_DATE
