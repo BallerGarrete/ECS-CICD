@@ -1,11 +1,14 @@
 # Use the official NGINX image as the base image
 FROM nginx:alpine
 
+#Specify working directory
+WORKDIR /usr/share/nginx/html
+
 # Remove the default NGINX configuration file
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy the website files to the container
-COPY src/. /usr/share/nginx/html
+COPY src/. .
 
 #Tag Image
 ARG BUILD_DATE
