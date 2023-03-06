@@ -1,5 +1,5 @@
 # Use the official NGINX image as the base image
-FROM nginx:alpline
+FROM nginx:alpine
 
 # Remove the default NGINX configuration file
 RUN rm /etc/nginx/conf.d/default.conf
