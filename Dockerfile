@@ -5,7 +5,7 @@ FROM nginx:alpine
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Copy the website files to the container
-COPY . /usr/share/nginx/html/
+COPY src/* /var/www/html/
 
 #Tag Image
 ARG BUILD_DATE
