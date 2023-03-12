@@ -2,3 +2,4 @@
 .README.md
 .aws.yml
 .test.conf
+nginx.conf
