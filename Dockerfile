@@ -18,7 +18,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE
 EXPOSE 80
 
 #CMD ["httpd-foreground"]
-CMD ["$ service apache2 start"]
+CMD ["$ service apache2 restart"]
 
 # Start NGINX web server
 #CMD ["nginx", "-g", "daemon off;"]
