@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-1:188527884040:task-definition/telcoin-task-definition:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-west-1:188527884040:task-definition/sample-TD:1",
     "containerDefinitions": [
         {
-            "name": "telcoin",
-            "image": "188527884040.dkr.ecr.us-west-1.amazonaws.com/telcoin-image-repo",
+            "name": "test-container",
+            "image": "public.ecr.aws/d7d3m1t5/sample-img-repo",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "telcoin-80-tcp",
+                    "name": "test-container-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -23,14 +23,15 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/telcoin-task-definition",
+                    "awslogs-group": "/ecs/sample-TD",
                     "awslogs-region": "us-west-1",
                     "awslogs-stream-prefix": "ecs"
                 }
             }
         }
     ],
-    "family": "telcoin-task-definition",
+    "family": "sample-TD",
+    "taskRoleArn": "arn:aws:iam::188527884040:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::188527884040:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
@@ -44,13 +45,10 @@
             "name": "ecs.capability.execution-role-awslogs"
         },
         {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
-            "name": "ecs.capability.execution-role-ecr-pull"
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
@@ -70,13 +68,13 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "cpu": "512",
-    "memory": "1024",
+    "cpu": "1024",
+    "memory": "3072",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-03-01T06:48:44.761Z",
+    "registeredAt": "2023-03-13T02:48:57.830Z",
     "registeredBy": "arn:aws:iam::188527884040:user/BallerAdmin",
     "tags": []
 }
