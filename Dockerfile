@@ -13,8 +13,7 @@ EXPOSE 80
 # Start Nginx when the container starts
 CMD ["nginx", "-g", "daemon off;"]
 
-RUN systemctl enable nginx
 
 # Copy the NGINX configuration file to the container
-#COPY nginx.conf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/conf.d
 
