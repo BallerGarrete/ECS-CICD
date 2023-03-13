@@ -1,5 +1,5 @@
 # Use the official Apache image as the base image
-FROM httpd:2.4-alpine
+FROM httpd:2.4
 
 # Remove the default NGINX configuration file
 #RUN rm /etc/nginx/conf.d/default.conf
