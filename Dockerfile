@@ -1,23 +1,19 @@
-# Use the official Apache image as the base image
-FROM httpd:2.4.48
+# Use Nginx as the base image
+FROM nginx
 
-# Remove the default NGINX configuration file
-#RUN rm /etc/nginx/conf.d/default.conf
+# Remove the default Nginx configuration file
+RUN rm /etc/nginx/conf.d/default.conf
 
-# Copy the website files to the container
-COPY src1 /usr/local/apache2/htdocs/
+# Copy the static website files to the container
+COPY . /usr/share/nginx/html
 
-#Tag Image
-ARG BUILD_DATE
-LABEL org.label-schema.build-date=$BUILD_DATE
+# Expose port 80 for incoming HTTP traffic
+EXPOSE 80
+
+# Start Nginx when the container starts
+CMD ["nginx", "-g", "daemon off;"]
+
 
 # Copy the NGINX configuration file to the container
 #COPY nginx.conf /etc/nginx/conf.d
 
-# Expose port 80 for HTTP traffic
-EXPOSE 80
-
-CMD ["httpd-foreground"]
-
-# Start NGINX web server
-#CMD ["nginx", "-g", "daemon off;"]
