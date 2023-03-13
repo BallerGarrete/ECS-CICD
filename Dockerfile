@@ -17,7 +17,8 @@ LABEL org.label-schema.build-date=$BUILD_DATE
 # Expose port 80 for HTTP traffic
 EXPOSE 80
 
-CMD ["httpd-foreground"]
+#CMD ["httpd-foreground"]
+CMD ["$ service apache2 start"]
 
 # Start NGINX web server
 #CMD ["nginx", "-g", "daemon off;"]
