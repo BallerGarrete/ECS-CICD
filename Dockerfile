@@ -4,6 +4,9 @@ FROM nginx
 # Remove the default Nginx configuration file
 RUN rm /etc/nginx/conf.d/default.conf
 
+# Copy the NGINX configuration file to the container
+COPY nginx.conf /etc/nginx/conf.d
+
 # Copy the static website files to the container
 COPY src1 /usr/share/nginx/html
 
@@ -13,7 +16,4 @@ EXPOSE 80
 # Start Nginx when the container starts
 CMD ["nginx", "-g", "daemon off;"]
 
-
-# Copy the NGINX configuration file to the container
-COPY nginx.conf /etc/nginx/conf.d
 
