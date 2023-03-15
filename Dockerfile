@@ -8,7 +8,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/
 
 # Copy the static website files to the container
-COPY src1 /usr/share/nginx/html
+COPY src1/* /usr/share/nginx/html/
 
 # Expose port 80 for incoming HTTP traffic
 EXPOSE 80
