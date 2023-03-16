@@ -8,7 +8,11 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/
 
 # Copy the static website files to the container
-COPY src /usr/share/nginx/html
+COPY src/* /usr/share/nginx/html/
+
+# Give Nginx read access to the css file and the directories conrtaining it.
+RUN chmod +r /usr/share/nginx/html/css/style.css
+
 
 # Expose port 80 for incoming HTTP traffic
 EXPOSE 80
