@@ -11,7 +11,7 @@ COPY nginx.conf /etc/nginx/conf.d/
 #RUN chmod +r /src/css/style.css
 
 # Copy the static website files to the container
-COPY src1/* /usr/share/nginx/html/
+COPY src/* /usr/share/nginx/html/
 
 
 # Expose port 80 for incoming HTTP traffic
