@@ -8,7 +8,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/
 
 # Give Nginx read access to the css file and the directories conrtaining it.
-RUN chmod +r src/css/style.css
+RUN chmod +r /src/css/style.css
 
 # Copy the static website files to the container
 COPY src/* /usr/share/nginx/html/
