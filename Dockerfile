@@ -13,6 +13,8 @@ COPY nginx.conf /etc/nginx/conf.d
 # Copy the static website files to the container
 COPY src/* /usr/share/nginx/html/
 
+# Make Nginx the user owner of the css Directory
+RUN chown -R nginxuser:nginxuser /usr/share/nginx/html/css
 
 # Expose port 80 for incoming HTTP traffic
 EXPOSE 80
